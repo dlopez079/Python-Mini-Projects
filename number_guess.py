@@ -53,7 +53,10 @@ while True:
 
     # If the user did not get it right, they will play again. 
     else:
-        print("You got it wrong! Try again!")
+        if user_guess > random_number:
+            print("You were above the number!")
+        else:
+            print("You were below the number!")
 
 # Print a statement that includes the amount of guesses.
 print("You got it in", guesses, "guesses.")
