@@ -52,11 +52,11 @@ while True:
         break
 
     # If the user did not get it right, they will play again. 
+    # Instead of the nested if statement, you can use the elif statement
+    elif user_guess > random_number:
+            print("Guess Lower!")
     else:
-        if user_guess > random_number:
-            print("You were above the number!")
-        else:
-            print("You were below the number!")
+        print("Guess Higher!")
 
 # Print a statement that includes the amount of guesses.
 print("You got it in", guesses, "guesses.")
