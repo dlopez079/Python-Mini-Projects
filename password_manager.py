@@ -1,7 +1,5 @@
 from cryptography.fernet import Fernet
 
-master_pwd = input("What is the master password? ")
-
 '''
 This function should only be used once.  
 After being used, comment it out.
@@ -13,6 +11,16 @@ def write_key():
 
 write_key()'''
 
+def load_key():
+    file = open("key.key", "rb")
+    key = file.read()
+    file.close()
+    return key
+
+key = load_key()
+
+
+master_pwd = input("What is the master password? ")
 
 def view():
     with open("passwords.txt", "r") as f:
