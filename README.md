@@ -16,3 +16,5 @@ I created a game where the user will choose a number representing the top of the
 
 User will input either Rock, Paper, Scissors where the computer will beat you.  At the end of the game, I will count the total number of wins by a user and the total number of wins by computer. 
 
+### Chose Your Own Adventure
+This game teaches you how to nest if, elif and else statements within each other to create a game.  The User will advance if they enter the correct answer to the question. 
