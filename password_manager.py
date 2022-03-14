@@ -1,14 +1,18 @@
 master_pwd = input("What is the master password? ")
 
 def view():
+    with open("passwords.txt", "r") as f:
+        for line in f.readlines():
+            print(line.rstrip()
+
     print("You chose to view a password.")
 
 def add():
     name = input("Enter Name: ")
     pwd = input("Enter Password: ")
 
-    with open("passwords.text", "a") as f:
-        f.write(name + "|" + pwd "\n")
+    with open("passwords.txt", "a") as f:
+        f.write(name + "|" + pwd + "\n")
 
     print("You successfully added the password.")
 
