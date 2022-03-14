@@ -17,10 +17,11 @@ def load_key():
     file.close()
     return key
 
-key = load_key()
 
 
 master_pwd = input("What is the master password? ")
+key = load_key() + master_pwd.bytes
+fer = Fernent(key)
 
 def view():
     with open("passwords.txt", "r") as f:
