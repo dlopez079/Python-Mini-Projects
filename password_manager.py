@@ -20,15 +20,15 @@ def load_key():
 
 
 master_pwd = input("What is the master password? ")
-key = load_key() + master_pwd.bytes
-fer = Fernent(key)
+key = load_key() + master_pwd.encode()
+fer = Fernet(key)
 
 def view():
     with open("passwords.txt", "r") as f:
         for line in f.readlines():
             data = line.rstrip()
             user, passw = data.split("|")
-            print("User:", user, "/ Password: ", passw)
+            print("User:", user, "/ Password: ", str(fer.encrypt(passw.encode())))
 
     print("You chose to view a password.")
 
@@ -37,7 +37,7 @@ def add():
     pwd = input("Enter Password: ")
 
     with open("passwords.txt", "a") as f:
-        f.write(name + "|" + pwd + "\n")
+        f.write(name + "|" + str(fer.encrypt(pwd.encode())) + "\n")
 
     print("You successfully added the password.")
 
