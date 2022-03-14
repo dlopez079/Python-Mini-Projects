@@ -1,4 +1,18 @@
+from cryptography.fernet import Fernet
+
 master_pwd = input("What is the master password? ")
+
+'''
+This function should only be used once.  
+After being used, comment it out.
+
+def write_key():
+    key = Fernet.generate_key()
+    with open("key.key", "wb") as key_file:
+        key_file.write(key)
+
+write_key()'''
+
 
 def view():
     with open("passwords.txt", "r") as f:
